@@ -1,0 +1,32 @@
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+
+repositories {
+  //mavenLocal()
+  jcenter()
+  mavenCentral()
+}
+
+dependencies {
+
+  testCompile(
+          'junit:junit:4.12',
+          'org.codehaus.groovy:groovy-all:2.4.12',
+          'org.spockframework:spock-core:1.0-groovy-2.4',
+  )
+
+  testRuntime(
+          'com.athaydes:spock-reports:1.2.7'
+  )
+}
+
+import de.wartbar.markdown.BlogPostIndexFileCreator
+
+task createBlogPostIndex(group : "BlogTools") {
+  description = "create the blog post index markdown file"
+
+  doLast {
+    BlogPostIndexFileCreator.create("../andrerolfs.github.io")
+  }
+}
