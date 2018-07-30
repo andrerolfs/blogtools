@@ -22,11 +22,20 @@ dependencies {
 }
 
 import de.wartbar.markdown.BlogPostIndexFileCreator
+import de.wartbar.markdown.TopicListCreator
 
 task createBlogPostIndex(group : "BlogTools") {
   description = "create the blog post index markdown file"
 
   doLast {
     BlogPostIndexFileCreator.create("../andrerolfs.github.io")
+  }
+}
+
+task createTopicFile(group : "BlogTools") {
+  description = "create the topic markdown file"
+
+  doLast {
+    TopicListCreator.create("../andrerolfs.github.io")
   }
 }

@@ -1,0 +1,11 @@
+gradle
+groovy
+java
+raspberry pi
+ethernet
+firefox
+github
+blog
+fritzbox
+jenkins
+html
