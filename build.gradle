@@ -39,3 +39,10 @@ task createTopicFile(group : "BlogTools") {
     TopicListCreator.create("../andrerolfs.github.io")
   }
 }
+
+task updateBlog(group : "BlogTools") {
+
+  dependsOn createTopicFile
+  dependsOn createBlogPostIndex
+
+}
