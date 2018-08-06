@@ -28,12 +28,12 @@ class TopicListCreator {
 
     BlogPosts blogPosts = new BlogPosts(pathFile)
     blogPosts.getBlogPostFileNames().each { currentFileName ->
-      File blogPostFile = new File(currentFileName)
+      File blogPostFile = new File(pathFile, currentFileName)
 
-      String content = blogPostFile.toString().toLowerCase()
+      String content = blogPostFile.text.toLowerCase()
 
       topicsList.each { topic ->
-        if (content.contains(topic)) {
+        if (content.contains( " " + topic + " ")) {
           List<String> blogPostList = topicMap.get(topic)
           blogPostList.add(blogPostFile.getName())
         }
