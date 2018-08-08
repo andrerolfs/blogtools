@@ -9,3 +9,5 @@ fritzbox
 jenkins
 html
 cisystem
+software
+database
